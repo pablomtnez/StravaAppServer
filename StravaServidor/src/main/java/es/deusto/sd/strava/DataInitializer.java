@@ -1,9 +1,3 @@
-/**
- * This code is based on solutions provided by ChatGPT 4o and 
- * adapted using GitHub Copilot. It has been thoroughly reviewed 
- * and validated to ensure correctness and that it is free of errors.
- */
-
 package es.deusto.sd.strava;
 
 import java.text.ParseException;
@@ -33,10 +27,10 @@ public class DataInitializer {
     CommandLineRunner initData(StravaService stravaService, AuthService authService) {
         return args -> {
 
-            // Crear usuarios
-            User user1 = new User(TipoUsuario.GOOGLE, "user1@gmail.com", "Alice", createDate(1990, 5, 15), 60.5f, 165f, 180f, 70f);
-            User user2 = new User(TipoUsuario.META, "user2@gmail.com", "Bob", createDate(1985, 2, 10), 75f, 178f, 190f, 80f);
-            User user3 = new User(TipoUsuario.GOOGLE, "user3@gmail.com", "Charlie", createDate(2000, 7, 25), 68f, 172f, 185f, 75f);
+            // Crear usuarios con el campo `password` incluido
+            User user1 = new User(TipoUsuario.GOOGLE, "user1@gmail.com", "Alice", createDate(1990, 5, 15), 60.5f, 165f, 180f, 70f, "password1");
+            User user2 = new User(TipoUsuario.META, "user2@gmail.com", "Bob", createDate(1985, 2, 10), 75f, 178f, 190f, 80f, "password2");
+            User user3 = new User(TipoUsuario.GOOGLE, "user3@gmail.com", "Charlie", createDate(2000, 7, 25), 68f, 172f, 185f, 75f, "password3");
 
             registerUser(authService, user1);
             registerUser(authService, user2);
@@ -50,11 +44,11 @@ public class DataInitializer {
             addSesionToService(stravaService, "Hill Cycling", 25.0f, createDate(2024, 10, 6), "09:00", 90.0f, Deportes.CICLISMO);
 
             // Crear y agregar retos
-            addChallengeToService(stravaService, "Run 50km in November", createDate(2024, 10, 1), createDate(2025, 10, 30), 50.0f, 0.0f, Deportes.RUNNING);
+            addChallengeToService(stravaService, "Run 50km in November", createDate(2024, 10, 1), createDate(2024, 11, 30), 50.0f, 0.0f, Deportes.RUNNING);
             addChallengeToService(stravaService, "Cycle 100km this month", createDate(2024, 10, 1), createDate(2024, 10, 30), 100.0f, 0.0f, Deportes.CICLISMO);
-            addChallengeToService(stravaService, "Triathlon Prep", createDate(2024, 10, 5), createDate(2025, 10, 20), 30.0f, 300.0f, Deportes.CICLISMO_AND_RUNNING);
+            addChallengeToService(stravaService, "Triathlon Prep", createDate(2024, 10, 5), createDate(2024, 11, 20), 30.0f, 300.0f, Deportes.CICLISMO_AND_RUNNING);
             addChallengeToService(stravaService, "Morning Challenge", createDate(2024, 9, 1), createDate(2024, 9, 30), 20.0f, 60.0f, Deportes.RUNNING);
-            addChallengeToService(stravaService, "Weekend Warrior", createDate(2024, 10, 7), createDate(2025, 10, 14), 15.0f, 120.0f, Deportes.CICLISMO);
+            addChallengeToService(stravaService, "Weekend Warrior", createDate(2024, 10, 7), createDate(2024, 10, 14), 15.0f, 120.0f, Deportes.CICLISMO);
         };
     }
 

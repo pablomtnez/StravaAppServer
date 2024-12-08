@@ -1,105 +1,47 @@
 package es.deusto.sd.strava.dto;
 
-import java.util.Date;
-
 public class UserDTO {
-	
-	private int tipo;
-	private String email;
-	private String nombre;
-    private Date fechaNacimiento;
-    private float peso;
-	private float altura;
-	private float frecuenciaCardiacaMaxima;
-	private float frecuenciaCardiacaReposo;
-	
-	public UserDTO(int tipo, String email, String nombre, Date fechaNacimiento, float peso, float altura,
-			float frecuenciaCardiacaMaxima, float frecuenciaCardiacaReposo) {
-		super();
-		this.tipo = tipo;
-		this.email = email;
-		this.nombre = nombre;
-		this.fechaNacimiento = fechaNacimiento;
-		this.peso = peso;
-		this.altura = altura;
-		this.frecuenciaCardiacaMaxima = frecuenciaCardiacaMaxima;
-		this.frecuenciaCardiacaReposo = frecuenciaCardiacaReposo;
-	}
 
-	public UserDTO() {
-		super();
-	}
+    private String email;
+    private String password; // NUEVO ATRIBUTO
+    private String nombre;
 
-	public int getTipo() {
-		return tipo;
-	}
+    public UserDTO() {
+        super();
+    }
 
-	public void setTipo(int tipo) {
-		this.tipo = tipo;
-	}
+    public UserDTO(String email, String password, String nombre) {
+        this.email = email;
+        this.password = password;
+        this.nombre = nombre;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public float getPeso() {
-		return peso;
-	}
-
-	public void setPeso(float peso) {
-		this.peso = peso;
-	}
-
-	public float getAltura() {
-		return altura;
-	}
-
-	public void setAltura(float altura) {
-		this.altura = altura;
-	}
-
-	public float getFrecuenciaCardiacaMaxima() {
-		return frecuenciaCardiacaMaxima;
-	}
-
-	public void setFrecuenciaCardiacaMaxima(float frecuenciaCardiacaMaxima) {
-		this.frecuenciaCardiacaMaxima = frecuenciaCardiacaMaxima;
-	}
-
-	public float getFrecuenciaCardiacaReposo() {
-		return frecuenciaCardiacaReposo;
-	}
-
-	public void setFrecuenciaCardiacaReposo(float frecuenciaCardiacaReposo) {
-		this.frecuenciaCardiacaReposo = frecuenciaCardiacaReposo;
-	}
-
-	@Override
-	public String toString() {
-		return "UserDTO [tipo=" + tipo + ", email=" + email + ", nombre=" + nombre + ", fechaNacimiento="
-				+ fechaNacimiento + ", peso=" + peso + ", altura=" + altura + ", frecuenciaCardiacaMaxima="
-				+ frecuenciaCardiacaMaxima + ", frecuenciaCardiacaReposo=" + frecuenciaCardiacaReposo + "]";
-	}
-	
-	
+    @Override
+    public String toString() {
+        return "UserDTO [email=" + email + ", password=" + password + ", nombre=" + nombre + "]";
+    }
 }
